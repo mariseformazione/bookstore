@@ -1,0 +1,17 @@
+Index: src/main/java/it/k2/formazione/bookstore/repository/BookRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/it/k2/formazione/bookstore/repository/BookRepository.java	(revision c07d57a3dfea610cec0ef7a946dd0e5fd7ffa86e)
++++ src/main/java/it/k2/formazione/bookstore/repository/BookRepository.java	(revision e6d9d6f3bb8e38e74dc86ec99f6dd889e219dec8)
+@@ -3,5 +3,9 @@
+ import it.k2.formazione.bookstore.model.Book;
+ import org.springframework.data.jpa.repository.JpaRepository;
+ 
++import java.util.List;
++
+ public interface BookRepository extends JpaRepository<Book, Integer> {
++
++    List<Book> findAllByIsbnAndTitle(String isbn, String title);
+ }
